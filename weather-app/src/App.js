@@ -5,7 +5,7 @@ import Search from './components/search/search';
 function App() {
 
   const handleOnSearchChange = (searchData) =>{
-    console.log("searchdata is here :", searchData);
+    console.log("serach data is here :", searchData);
   }
   return (
     <div className="container">
