@@ -7,6 +7,9 @@ export const geoApiOptions = {
 	}
 };
 
+export const WEATHER_API_URL = "https://api.openweathermap.org/data/2.5";
+export const WEATHER_API_KEY = "bee04f3cc63c81eb9fbb09bee4f30960";
+
 // try {
 //     const response = await fetch(url, options);
 //     const result = await response.text();
