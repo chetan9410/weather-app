@@ -25,7 +25,7 @@ function Search({ onSearchChange }) {
    
     const loadOptions = async (searchInputValue) => {
         try {
-            const response = await fetch(`${GEO_API_URL}/cities?minPopulation=1000000&namePrefix=${searchInputValue}`, geoApiOptions);
+            const response = await fetch(`${GEO_API_URL}/cities?namePrefix=${searchInputValue}`, geoApiOptions);
             const result = await response.json();
 
             return {

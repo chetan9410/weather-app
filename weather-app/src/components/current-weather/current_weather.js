@@ -17,28 +17,22 @@ const CurrentWeather = ({data}) => {
                     <div className="parameter-row">
                         <span className="parameter-label">Details</span>
                     </div>
-                    <div className="parameter-row">
-                        <span className="parameter-label">Feels like</span>
-                        <span className="parameter-value">{Math.round(data.main.feels_like)}°C</span>
-                    </div>
-                    <div className="parameter-row">
-                        <span className="parameter-label">Humidity</span>
-                        <span className="parameter-value">{Math.round(data.main.humidity)}%</span>
-                    </div>
-                    <div className="parameter-row">
-                        <span className="parameter-label">wind</span>
-                        <span className="parameter-value">{data.wind.speed}m/s</span>
-                    </div>
-                    <div className="parameter-row">
-                        <span className="parameter-label">latitude</span>
-                        <span className="parameter-value">{data.coord.lat}° N</span>
-                    </div>
-                    <div className="parameter-row">
-                        <span className="parameter-label">longitude</span>
-                        <span className="parameter-value">{data.coord.lon}° E</span>
-                    </div>
+                    <Details label= "Feels like" value={`${Math.round(data.main.feels_like)}°C`} />
+                    <Details label= "Humidity" value={`${Math.round(data.main.humidity)}%`} />
+                    <Details label= "wind" value={`${data.wind.speed}m/s`} />
+                    <Details label= "latitude" value={`${data.coord.lat}° N`} />
+                    <Details label= "longitude" value={`${data.coord.lon}° E`} />
                 </div>
             </div>
+        </div>
+    )
+}
+
+const Details = ({label, value}) =>{
+    return(
+        <div className="parameter-row">
+            <span className="parameter-label">{label}</span>
+            <span className="parameter-value">{value}</span>
         </div>
     )
 }

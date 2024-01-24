@@ -28,30 +28,12 @@ const Forecast = ({data}) =>{
                     </AccordionItemHeading>
                     <AccordionItemPanel>
                         <div className="daily-details-grid">
-                            <div className="daily-details-grid-item">
-                                <label>Pressure</label>
-                                <label>{item.main.pressure}Pa</label>
-                            </div>
-                            <div className="daily-details-grid-item">
-                                <label>Humidity</label>
-                                <label>{item.main.humidity}%</label>
-                            </div>
-                            <div className="daily-details-grid-item">
-                                <label>Clouds</label>
-                                <label>{item.clouds.all}</label>
-                            </div>
-                            <div className="daily-details-grid-item">
-                                <label>Feels like</label>
-                                <label>{item.main.feels_like}°C</label>
-                            </div>
-                            <div className="daily-details-grid-item">
-                                <label>Sea Level</label>
-                                <label>{item.main.sea_level}m</label>
-                            </div>
-                            <div className="daily-details-grid-item">
-                                <label>Wind Speed</label>
-                                <label>{item.wind.speed}m/s</label>
-                            </div>
+                            <GridItems labelName= "Pressure" labelValue={`${item.main.pressure}Pa`} />
+                            <GridItems labelName= "Humidity" labelValue={`${item.main.humidity}%`} />
+                            <GridItems labelName= "Clouds" labelValue={`${item.clouds.all}`} />
+                            <GridItems labelName= "Feels like" labelValue={`${item.main.feels_like}°C`} />
+                            <GridItems labelName= "Sea Level" labelValue={`${item.main.sea_level}m`} />
+                            <GridItems labelName= "Wind Speed" labelValue={`${item.wind.speed}m/s`} />
                         </div>
                     </AccordionItemPanel>
                 </AccordionItem>
@@ -61,4 +43,12 @@ const Forecast = ({data}) =>{
     )
 }
 
+const GridItems = ({labelValue, labelName}) =>{
+    return(
+        <div className="daily-details-grid-item">
+            <label>{labelName}</label>
+            <label>{labelValue}</label>
+        </div>
+    )
+}
 export default Forecast;
